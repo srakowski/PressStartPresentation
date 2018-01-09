@@ -10,6 +10,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)Background.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ImageRenderer.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)RendererOptions.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Fonts.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Input.cs" />

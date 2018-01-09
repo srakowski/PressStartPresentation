@@ -10,12 +10,13 @@ namespace PressStart
         public bool IsFragment { get; }
         public bool IsActive { get; private set; }
         public abstract int Height { get; }
+        protected RendererOptions Options { get; }
         public abstract void Draw(SpriteBatch sb, int yOffset);
         protected Renderer(RendererOptions opts)
         {
-            opts = opts ?? new RendererOptions();
-            IsFragment = opts.IsFragment;
-            IsActive = !opts.IsFragment;
+            Options = opts ?? new RendererOptions();
+            IsFragment = Options.IsFragment;
+            IsActive = !Options.IsFragment;
         }
         public bool Activate() => IsActive = true;
     }

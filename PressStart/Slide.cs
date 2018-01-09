@@ -86,6 +86,13 @@ namespace PressStart
             return this;
         }
 
+        internal Slide Image(string path, RendererOptions opts = null)
+        {
+            // todo get PresentationContent out of here..
+            _renderers.Add(new ImageRenderer(opts, Presentation.PresentationContent.Images[path]));
+            return this;
+        }
+
         internal void ActivateNextFragment()
         {
             _renderers.FirstOrDefault(r => !r.IsActive)?.Activate();

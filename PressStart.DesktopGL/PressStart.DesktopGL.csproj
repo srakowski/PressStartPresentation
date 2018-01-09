@@ -108,7 +108,34 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Content Include="Content\Images\cat1.jpg" />
+    <Content Include="Content\Images\cat2.jpg" />
+    <Content Include="Content\Images\desert.JPG" />
+    <Content Include="Content\Images\fcdev.png" />
+    <Content Include="Content\Images\giphy.gif" />
+    <Content Include="Content\Images\github.png" />
+    <Content Include="Content\Images\heart.png" />
+    <Content Include="Content\Images\igj.png" />
+    <Content Include="Content\Images\isominer.png" />
+    <Content Include="Content\Images\ItsOnlyYou.mp3" />
+    <Content Include="Content\Images\jpl-logo.png" />
+    <Content Include="Content\Images\jpl.jpg" />
+    <Content Include="Content\Images\js.jpg" />
+    <Content Include="Content\Images\ld.png" />
+    <Content Include="Content\Images\masterwizard.gif" />
+    <Content Include="Content\Images\nasa-logo.png" />
+    <Content Include="Content\Images\nate-jones.jpg" />
+    <Content Include="Content\Images\onegame.png" />
+    <Content Include="Content\Images\onlyyou.jpg" />
+    <Content Include="Content\Images\phaser.png" />
+    <Content Include="Content\Images\pico8.png" />
+    <Content Include="Content\Images\play.jpg" />
+    <Content Include="Content\Images\pv8.gif" />
+    <Content Include="Content\Images\sandbox.jpg" />
     <Content Include="Content\Images\star.png" />
+    <Content Include="Content\Images\tic80.gif" />
+    <Content Include="Content\Images\twine.png" />
+    <Content Include="Content\Images\unity.jpg" />
   </ItemGroup>
   <Import Project="..\PressStart\PressStart.projitems" Label="Shared" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
