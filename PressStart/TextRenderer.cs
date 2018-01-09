@@ -65,7 +65,7 @@ namespace PressStart
             int lineNumber = 0;
             foreach (var line in _lines)
             {
-                sb.DrawString(Font, line, new Vector2(100f, 100f) + new Vector2(0, (lineNumber++ * LineHeight) + yOffset), Color);
+                sb.DrawString(Font, line, new Vector2(100f, 100f) + new Vector2(0, (lineNumber++ * LineHeight) + yOffset), new Color(Color, Options.Alpha));
             }
         }
     }

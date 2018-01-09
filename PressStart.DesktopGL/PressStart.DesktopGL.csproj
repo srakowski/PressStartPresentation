@@ -108,6 +108,7 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Content Include="Content\Audio\ItsOnlyYou.mp3" />
     <Content Include="Content\Images\cat1.jpg" />
     <Content Include="Content\Images\cat2.jpg" />
     <Content Include="Content\Images\desert.JPG" />
@@ -117,7 +118,6 @@
     <Content Include="Content\Images\heart.png" />
     <Content Include="Content\Images\igj.png" />
     <Content Include="Content\Images\isominer.png" />
-    <Content Include="Content\Images\ItsOnlyYou.mp3" />
     <Content Include="Content\Images\jpl-logo.png" />
     <Content Include="Content\Images\jpl.jpg" />
     <Content Include="Content\Images\js.jpg" />
@@ -132,6 +132,7 @@
     <Content Include="Content\Images\play.jpg" />
     <Content Include="Content\Images\pv8.gif" />
     <Content Include="Content\Images\sandbox.jpg" />
+    <Content Include="Content\Images\sbs.png" />
     <Content Include="Content\Images\star.png" />
     <Content Include="Content\Images\tic80.gif" />
     <Content Include="Content\Images\twine.png" />

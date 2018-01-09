@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Media;
 
 namespace PressStart
 {
@@ -32,17 +33,23 @@ namespace PressStart
 
         private SlideState _slideState = SlideState.Inactive;
 
+        private event EventHandler OnActivate;
+
+        private event EventHandler OnDeactivate;
+
         internal void Update(GameTime gameTime)
         {
             if (_slideState == SlideState.TransitionOn)
             {
                 _pos += (_transitionDir * 20);
                 if (_pos == 0) _slideState = SlideState.Active;
+                OnActivate?.Invoke(this, null);
             }
             else if (_slideState == SlideState.TransitionOff)
             {
                 _pos += (_transitionDir * 20);
                 if (Math.Abs(_pos) == BOUNDARY) _slideState = SlideState.Inactive;
+                OnDeactivate?.Invoke(this, null);
             }
         }
 
@@ -53,7 +60,8 @@ namespace PressStart
 
             int yOffset = 0;
 
-            sb.Begin(transformMatrix: Matrix.Identity * Matrix.CreateTranslation(new Vector3((_pos / 100f) * 1280f, 0f, 1f)));
+            sb.Begin(blendState: BlendState.NonPremultiplied,
+                transformMatrix: Matrix.Identity * Matrix.CreateTranslation(new Vector3((_pos / 100f) * 1280f, 0f, 1f)));
             foreach (var renderer in _renderers.Where(r => r.IsActive))
             {
                 renderer.Draw(sb, yOffset);
@@ -90,6 +98,13 @@ namespace PressStart
         {
             // todo get PresentationContent out of here..
             _renderers.Add(new ImageRenderer(opts, Presentation.PresentationContent.Images[path]));
+            return this;
+        }
+
+        internal Slide Song(string path)
+        {
+            OnActivate += (s, e) => MediaPlayer.Play(Presentation.PresentationContent.Songs[path]);
+            OnDeactivate += (s, e) => MediaPlayer.Stop();
             return this;
         }
 
