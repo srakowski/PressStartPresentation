@@ -17,6 +17,8 @@ namespace PressStart.Presentation
 
         public static Texture2D Star => Images["Images/star"];
 
+        public static Texture2D Ship => Images["Images/pirate"];
+
         public static void Load(ContentManager content)
         {
             var img = new Action<string>(path => Images[path] = content.Load<Texture2D>(path));
@@ -41,6 +43,7 @@ namespace PressStart.Presentation
             img("Images/braid");
             img("Images/kenney");
             img("Images/phaser");
+            img("Images/pirate");
 
             var song = new Action<string>(path => Songs[path] = content.Load<Song>(path));
             song("Audio/ItsOnlyYou");

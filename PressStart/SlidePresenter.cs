@@ -55,7 +55,7 @@ namespace PressStart
         internal void Update(GameTime gameTime)
         {
             _background.Update(gameTime, _slides.FirstOrDefault(s => s.IsTransitioning)?.Direction ?? -1);
-
+            _progressIndicator.Update(gameTime);
             foreach (var slide in _slides)
                 slide.Update(gameTime);
         }

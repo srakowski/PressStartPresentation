@@ -16,6 +16,8 @@ namespace PressStart
             _nodeIdx = MathHelper.Clamp(idx, 0, _nodeCount);
         }
 
+        public virtual void Update(GameTime gameTime) { }
+
         public void Draw(SpriteBatch sb) => Draw(sb, _nodeIdx, _nodeCount);
 
         protected abstract void Draw(SpriteBatch sb, int idx, int count);
