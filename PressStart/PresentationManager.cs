@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using PressStart.Presentation;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -57,7 +58,7 @@ namespace PressStart
 
         public override void Draw(GameTime gameTime)
         {
-            Game.GraphicsDevice.Clear(Color.Black);
+            Game.GraphicsDevice.Clear(Colors.Background);
             _slidePresenter.Draw(_sb);
         }
     }

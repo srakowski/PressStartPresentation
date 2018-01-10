@@ -105,6 +105,7 @@
     <None Include="app.manifest" />
     <None Include="Content\Fonts\H2.spritefont" />
     <None Include="Content\Fonts\H1.spritefont" />
+    <None Include="Content\Fonts\SubText.spritefont" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

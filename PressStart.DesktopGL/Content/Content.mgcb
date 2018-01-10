@@ -27,6 +27,13 @@
 /processorParam:TextureFormat=NoChange
 /build:Fonts/H2.spritefont
 
+#begin Fonts/SubText.spritefont
+/importer:FontDescriptionImporter
+/processor:FontDescriptionProcessor
+/processorParam:PremultiplyAlpha=True
+/processorParam:TextureFormat=NoChange
+/build:Fonts/SubText.spritefont
+
 #begin Images/star.png
 /importer:TextureImporter
 /processor:TextureProcessor

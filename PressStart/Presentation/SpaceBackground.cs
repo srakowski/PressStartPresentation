@@ -25,7 +25,7 @@ namespace PressStart.Presentation
             for (int i = 0; i < 100; i++)
                 stars.Add(new Star
                 {
-                    Position = new Vector2(random.Next(1280), random.Next(720)),
+                    Position = new Vector2(random.Next(Stage.WIDTH), random.Next(Stage.HEIGHT)),
                     Color = new Color(random.Next(255), random.Next(255), random.Next(255), random.Next(50, 250)),
                 });
             _stars = stars;
@@ -36,8 +36,8 @@ namespace PressStart.Presentation
             foreach (var star in _stars)
             {
                 star.Position += new Vector2(direction * star.Color.A * (((float)gameTime.ElapsedGameTime.TotalSeconds/2f)), 0f);
-                if (star.Position.X < 0) star.Position += new Vector2(1280f, 0f);
-                if (star.Position.X > 1280f) star.Position -= new Vector2(1280f, 0f);
+                if (star.Position.X < 0) star.Position += new Vector2(Stage.WIDTH, 0f);
+                if (star.Position.X > Stage.WIDTH) star.Position -= new Vector2(Stage.WIDTH, 0f);
             }
         }
 

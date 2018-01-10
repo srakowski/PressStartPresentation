@@ -61,11 +61,12 @@ namespace PressStart
             int yOffset = 0;
 
             sb.Begin(blendState: BlendState.NonPremultiplied,
-                transformMatrix: Matrix.Identity * Matrix.CreateTranslation(new Vector3((_pos / 100f) * 1280f, 0f, 1f)));
+                transformMatrix: Matrix.Identity * Matrix.CreateTranslation(new Vector3((_pos / 100f) * Stage.WIDTH, 0f, 1f)));
+            var totH = _renderers.Select(r => r.Height).Sum();
             foreach (var renderer in _renderers.Where(r => r.IsActive))
             {
-                renderer.Draw(sb, yOffset);
-                yOffset += renderer.Height;
+                renderer.Draw(sb, yOffset, (int)((Stage.HEIGHT * 0.5f) - (totH * 0.5f)));
+                yOffset += (int)(renderer.Height + 30f);
             }
             sb.End();
         }
@@ -94,6 +95,12 @@ namespace PressStart
             return this;
         }
 
+        internal Slide SubText(string text, RendererOptions opts = null)
+        {
+            _renderers.Add(new TextRenderer(opts, Fonts.SubText, text));
+            return this;
+        }
+
         internal Slide Image(string path, RendererOptions opts = null)
         {
             // todo get PresentationContent out of here..
@@ -111,6 +118,7 @@ namespace PressStart
         internal void ActivateNextFragment()
         {
             _renderers.FirstOrDefault(r => !r.IsActive)?.Activate();
+            while (_renderers.FirstOrDefault(r => !r.IsActive && r.AutoNext)?.Activate() ?? false) ;
         }
     }
 }

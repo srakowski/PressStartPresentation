@@ -11,6 +11,7 @@
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)Background.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ImageRenderer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Presentation\Colors.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)RendererOptions.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Fonts.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Input.cs" />
@@ -24,6 +25,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Renderer.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Slide.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)SlidePresenter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Stage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)TextRenderer.cs" />
   </ItemGroup>
 </Project>

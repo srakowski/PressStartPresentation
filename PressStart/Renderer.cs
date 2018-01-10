@@ -9,9 +9,10 @@ namespace PressStart
     {
         public bool IsFragment { get; }
         public bool IsActive { get; private set; }
+        public bool AutoNext => IsFragment && Options.AutoNextFragment;
         public abstract int Height { get; }
         protected RendererOptions Options { get; }
-        public abstract void Draw(SpriteBatch sb, int yOffset);
+        public abstract void Draw(SpriteBatch sb, int yOffset, int totalHeight);
         protected Renderer(RendererOptions opts)
         {
             Options = opts ?? new RendererOptions();

@@ -47,7 +47,6 @@ namespace PressStart.Presentation
             Kenney,
             Incompetech,
             IncompetechExample,
-            Blank,
             IncompetechExample2,
             Blank,
             LearningPre,
@@ -59,21 +58,20 @@ namespace PressStart.Presentation
         };
 
         static Slide PressStartSlide => new Slide()
-            .Title("Press Start");
+            .Title("Press Start", Center);
 
         static Slide TitleSlide => new Slide()
-            .Title("Game Development for the Uninitiated")
-            .SubTitle("Shawn Rakowski")
-            .SubTitle("CodeMash 2.0.18")
-            .SubTitle("@Shwany")
-            .SubTitle("@realDonaldTrump", Fragment);
+            .Title("Game Development for the Uninitiated", Center)
+            .SubTitle("Shawn Rakowski - CodeMash 2.0.18", Center)
+            .SubTitle("@Shwany", Center)
+            .SubTitle("@realDonaldTrump", Fragment.Center());
 
         static Slide NotPassionateAboutGames => new Slide()
-            .Title("I am NOT passionate about games.");
+            .Title("I am NOT passionate about games.", Center);
 
         static Slide YouAreAwesome => new Slide()
-            .Title("You are AWESOME!")
-            .SubTitle("And game dev can make you even more awesome!", Fragment);
+            .Title("You are AWESOME!", Center)
+            .SubTitle("Game dev can make you even more awesome!", Fragment.Center());
 
         static Slide WhyItMakesYouMoreAwesome => new Slide()
             .Title("Why?")
@@ -87,10 +85,10 @@ namespace PressStart.Presentation
             .Image("Images/nate-jones", Scale(0.8f));
 
         static Slide PlaySlide = new Slide()
-            .Image("Images/play");
+            .Image("Images/play", Scale(1.60f));
 
         static Slide ActivityGraph = new Slide()
-            .Image("Images/github");
+            .Image("Images/github", Scale(1.60f));
 
         static Slide WhyItMakesYouMoreAwesome2 => new Slide()
             .Title("Why?")
@@ -98,23 +96,23 @@ namespace PressStart.Presentation
             .SubTitle("2. Games are one of the best domains to initiate, maintain, and enjoy a habit of recreational programming.");
 
         static Slide ItsOnlyYou => new Slide()
-            .Image("Images/onlyyou")
+            .Image("Images/onlyyou", Scale(1.50f))
             .Song("Audio/ItsOnlyYou");
 
         static Slide SatSlide => new Slide()
-            .Image("Images/sat");
+            .Image("Images/sat", Scale(1.50f));
 
         static Slide SuperBigSister => new Slide()
-            .Image("Images/sbs");
+            .Image("Images/sbs", Scale(1.50f));
 
         static Slide MonetizeSlide => new Slide()
             .Image("Images/takemymoney");
 
         static Slide InitiatingTheHobby => new Slide()
-            .Title("Initiating");
+            .Title("Initiating", Center);
 
         static Slide Desert => new Slide()
-            .Image("Images/desert");
+            .Image("Images/desert", Scale(1.20f));
 
         static Slide Sandbox => new Slide()
             .Image("Images/sandbox", Scale(0.8f));
@@ -125,44 +123,42 @@ namespace PressStart.Presentation
             .SubTitle("- Fantasy Consoles");
 
         static Slide GameJams => new Slide()
-            .Title("Game Jams")
-            .Image("Images/ld", Fragment);
+            .Title("Game Jams", Center)
+            .Image("Images/ld", Fragment)
+            .SubText("ldjam.com", Fragment.AutoNextFragment().Center());
 
         static Slide LudumDare => new Slide()
-            .Title("Ludum Dare Compo")
+            .Title("Ludum Dare \"Compo\" Mode")
             .SubTitle("- 48 hours")
             .SubTitle("- Solo")
             .SubTitle("- All assets made during the event")
             .SubTitle("- Source code must be submitted");
 
         static Slide LudumDareJam => new Slide()
-            .Title("Ludum Dare Jam")
+            .Title("Ludum Dare \"Jam\" Mode")
             .SubTitle("- 72 hours")
             .SubTitle("- Teams")
             .SubTitle("- Premade assets okay");
 
         static Slide WhyGameJams => new Slide()
-            .Title("Why Game Jams?")
-            .SubTitle("1. Scheduled and timeboxed", Fragment)
-            .SubTitle("2. Collaborative", Fragment);
+            .Title("Game Jams Rock!", Center);
 
         static Slide IndieGameJams => new Slide()
-            .Title("Where to find game jams?")
-            .SubTitle("http://www.indiegamejams.com/")
-            .Image("Images/igj", Scale(0.8f));
+            .Image("Images/igj", Scale(0.8f).Center())
+            .SubText("www.indiegamejams.com", Center);
 
         static Slide FantasyConsoles => new Slide()
-            .Title("Fantasy Consoles")
-            .Image("Images/pico8", Fragment);
+            .Title("Fantasy Consoles", Center)
+            .Image("Images/pico8", Fragment.Center())
+            .SubText("www.lexaloffle.com/pico-8.php", Fragment.Center().AutoNextFragment());
 
         static Slide OtherFantasyConsoles => new Slide()
             .Title("Other Fantasy Consoles")
-            .SubTitle("- TIC-80 https://tic.computer/ (Free)")
-            .SubTitle("- PixelVision8 http://pixelvision8.com/");
+            .SubTitle("- TIC-80 (tic.computer) (Free)")
+            .SubTitle("- PixelVision8 (pixelvision8.com)");
 
         static Slide Resources => new Slide()
-            .Title("Resources:")
-            .SubTitle("https://github.com/srakowski/game-dev-resources");
+            .Title("github.com/srakowski/game-dev-resources", Center);
 
         static Slide DoYouNeed => new Slide()
             .Title("Engines and Frameworks")
@@ -170,7 +166,8 @@ namespace PressStart.Presentation
             .SubTitle("2. What do I want to build?", Fragment);
 
         static Slide Twine => new Slide()
-            .Image("Images/twine");
+            .Image("Images/twine", Center)
+            .SubText("twinery.org", Center);
 
         static Slide DoYouNeed2 => new Slide()
             .Title("Engines and Frameworks")
@@ -179,11 +176,12 @@ namespace PressStart.Presentation
             .SubTitle("3. What do I want out of game dev?", Fragment);
 
         static Slide Phaser => new Slide()
-            .Image("Images/phaser");
+            .Image("Images/phaser", Center)
+            .SubText("phaser.io", Center);
 
         static Slide GraphicsAndAudio => new Slide()
-            .Title("Graphics and Audio")
-            .SubTitle("Do I need them?", Fragment);
+            .Title("Graphics and Audio", Center)
+            .SubTitle("Do I need them?", Fragment.Center());
 
         static Slide StrategiesForAC => new Slide()
             .Title("Strategies for the Artistically Challenged")
@@ -198,13 +196,15 @@ namespace PressStart.Presentation
             .SubTitle("2. Generate assets", Fragment);
 
         static Slide Sfxr => new Slide()
-            .Title("SFXR/BFXR")
-            .SubTitle("- Coin", Play("Audio/coin"))
-            .SubTitle("- Explosion", Play("Audio/explode"))
-            .SubTitle("- Jump", Play("Audio/jump"));
+            .Title("SFXR", Center)
+            .SubText("www.drpetter.se/project_sfxr.html", Center)
+            .SubTitle("[Coin]", Play("Audio/coin").Center())
+            .SubTitle("[Explosion]", Play("Audio/explode").Center())
+            .SubTitle("[Jump]", Play("Audio/jump").Center());
 
         static Slide AM => new Slide()
-            .Title("Abundant Music")
+            .Title("Generated By Abundant Music", Center)
+            .SubText("abundant-music.com", Center)
             .Song("Audio/abm");
 
         static Slide StrategiesForAC3 => new Slide()
@@ -214,58 +214,62 @@ namespace PressStart.Presentation
             .SubTitle("3. Use other people's assets", Fragment);
 
         static Slide Kenney => new Slide()
-            .Title("Kenney Assets")
-            .Image("Images/kenney");
+            .SubTitle("Kenney Asset Packs", Center)
+            .Image("Images/kenney", Center)
+            .SubText("kenney.nl", Center);
 
         static Slide Incompetech => new Slide()
-            .Title("Incompetech")
-            .SubTitle("http://incompetech.com/music/");
+            .Title("Incompetech.com", Center)
+            .SubTitle("Royalty Free Music by Kevin Macleod", Center)
+            .SubText("http://incompetech.com/music/", Center);
 
         static Slide IncompetechExample => new Slide()
-            .Title("Action")
-            .SubTitle(@"Hot Pursuit Kevin MacLeod (incompetech.com)
-Licensed under Creative Commons: By Attribution 3.0 License
-http://creativecommons.org/licenses/by/3.0/")
+            .Title("Action", Center)
+            .SubText("Hot Pursuit Kevin MacLeod (incompetech.com)", Center)
+            .SubText("Licensed under Creative Commons: By Attribution 3.0 License", Center)
+            .SubText("http://creativecommons.org/licenses/by/3.0/", Center)
             .Song("Audio/Hot Pursuit");
 
         static Slide IncompetechExample2 => new Slide()
-            .Title("Wonder")
-            .SubTitle(@"Dreamy Flashback Kevin MacLeod (incompetech.com)
-Licensed under Creative Commons: By Attribution 3.0 License
-http://creativecommons.org/licenses/by/3.0/")
+            .Title("Wonder", Center)
+            .SubText(@"Dreamy Flashback Kevin MacLeod (incompetech.com)", Center)
+            .SubText("Licensed under Creative Commons: By Attribution 3.0 License", Center)
+            .SubText("http://creativecommons.org/licenses/by/3.0/", Center)
             .Song("Audio/Dreamy Flashback");
 
         static Slide Udemy => new Slide()
-            .Image("Images/udemy");
+            .Image("Images/udemy", Scale(1.20f));
 
         static Slide LearningPre => new Slide()
-            .Title("Resources for Learning");
+            .Title("Resources for Learning", Center);
 
         static Slide Learning => new Slide()
             .Title("Resources for Learning")
-            .SubTitle("- GameFromScratch", Fragment)
-            .SubTitle("- Handmade Hero", Fragment)
-            .SubTitle("- @McFunkyPants", Fragment)
-            .SubTitle("- Lostcast", Fragment);
+            .SubTitle("- GameFromScratch (gamefromscratch.com)", Fragment)
+            .SubTitle("- Handmade Hero (handmadehero.org)", Fragment)
+            .SubTitle("- @McFunkyPants (twitter.com/McFunkypants)", Fragment)
+            .SubTitle("- Lostcast (lostdecadegames.com/lostcast)", Fragment);
 
         static Slide Distributing => new Slide()
-            .Title("Distributing Your Game")
-            .SubTitle("- Itch.io", Fragment)
-            .SubTitle("- Humble Gamepages", Fragment)
-            .SubTitle("- Xbox Live Creators Program", Fragment)
-            .SubTitle("- Steam Direct", Fragment);
+            .Title("Distributing Your Game $$$")
+            .SubTitle("- Itch (itch.io)", Fragment)
+            .SubTitle("- Humble Gamepages (humblebundle.com/developer)", Fragment)
+            .SubTitle("- Xbox Live Creators Program (www.xbox.com/en-US/developers/creators-program)", Fragment)
+            .SubTitle("- Steam Direct (partner.steamgames.com/steamdirect)", Fragment);
 
         static Slide SeaSquirt => new Slide()
             .Image("Images/seasquirt", Scale(0.8f));
 
         static Slide ThankYou => new Slide()
-            .Title("Thank you!")
-            .SubTitle("@Shwany")
-            .SubTitle("Resources: https://github.com/srakowski/game-dev-resources");
+            .Title("Thank you!", Center)
+            .SubTitle("@Shwany", Center)
+            .SubTitle("github.com/srakowski/game-dev-resources", Center);
 
         static Slide Blank => new Slide();
 
         static RendererOptions Alpha(float alpha) => new RendererOptions { Alpha = alpha };
+
+        static RendererOptions Center => new RendererOptions { Center = true };
 
         static RendererOptions Fragment => new RendererOptions { IsFragment = true };
 
