@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework.Graphics;
+﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -12,6 +13,7 @@ namespace PressStart
         public bool AutoNext => IsFragment && Options.AutoNextFragment;
         public abstract int Height { get; }
         protected RendererOptions Options { get; }
+        public virtual void Update(GameTime gameTime) { }
         public abstract void Draw(SpriteBatch sb, int yOffset, int totalHeight);
         protected Renderer(RendererOptions opts)
         {

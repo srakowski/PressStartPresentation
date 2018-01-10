@@ -8,6 +8,7 @@
         public string SoundEffect { get; set; } = null;
         public bool Center { get; set; }
         public bool AutoNextFragment { get; set; }
+        public bool Blink { get; set; }
     }
 
     static class RendererOptionsExtensions
@@ -27,6 +28,12 @@
         public static RendererOptions AutoNextFragment(this RendererOptions self)
         {
             self.AutoNextFragment = true;
+            return self;
+        }
+
+        public static RendererOptions Blink(this RendererOptions self)
+        {
+            self.Blink = true;
             return self;
         }
     }

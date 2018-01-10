@@ -51,6 +51,10 @@ namespace PressStart
                 if (Math.Abs(_pos) == BOUNDARY) _slideState = SlideState.Inactive;
                 OnDeactivate?.Invoke(this, null);
             }
+            else if (_slideState == SlideState.Active)
+            {
+                foreach (var r in _renderers) r.Update(gameTime);
+            }
         }
 
         internal void Draw(SpriteBatch sb)

@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using PressStart.Presentation;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -20,6 +21,12 @@ namespace PressStart
         public SpriteFont Font { get; set; }
 
         private string _text;
+
+        private int _alpha = 255;
+
+        private int _blinkdir = -1;
+
+        private float MyAlpha => (_alpha / 255f);
 
         public string Text
         {
@@ -65,6 +72,14 @@ namespace PressStart
             Text = text;
         }
 
+        public override void Update(GameTime gameTime)
+        {
+            if (!Options.Blink) return;
+            _alpha = MathHelper.Clamp(_alpha + (int)(_blinkdir * gameTime.ElapsedGameTime.TotalSeconds * 300), 0, 255);
+            if (_alpha == 0) _blinkdir = 1;
+            if (_alpha == 255) _blinkdir = -1;
+        }
+
         public override void Draw(SpriteBatch sb, int yOffset, int centerOffset)
         {
             int lineNumber = 0;
@@ -76,7 +91,7 @@ namespace PressStart
                         spriteFont: Font,
                         text: line,
                         position: new Vector2(Stage.MARGIN, Stage.MARGIN) + new Vector2(0, (lineNumber++ * LineHeight) + yOffset),
-                        color: new Color(Color, Options.Alpha));
+                        color: new Color(Color, MathHelper.Min(Options.Alpha, MyAlpha)));
                 }
                 else
                 {
@@ -84,7 +99,7 @@ namespace PressStart
                         spriteFont: Font,
                         text: line,
                         position: new Vector2(Stage.WIDTH*0.5f, centerOffset - (LineHeight * 0.5f)) + new Vector2(-Origin.X, (lineNumber++ * LineHeight) + yOffset),
-                        color: new Color(Color, Options.Alpha));
+                        color: new Color(Color, MathHelper.Min(Options.Alpha, MyAlpha)));
                 }
             }
         }

@@ -58,7 +58,7 @@ namespace PressStart.Presentation
         };
 
         static Slide PressStartSlide => new Slide()
-            .Title("Press Start", Center);
+            .Title("Press Start", Center.Blink());
 
         static Slide TitleSlide => new Slide()
             .Title("Game Development for the Uninitiated", Center)
