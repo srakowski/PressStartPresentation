@@ -108,7 +108,8 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <Content Include="Content\Audio\ItsOnlyYou.mp3" />
+    <Content Include="Content\Audio\Dreamy Flashback.mp3" />
+    <Content Include="Content\Audio\Hot Pursuit.mp3" />
     <Content Include="Content\Images\cat1.jpg" />
     <Content Include="Content\Images\cat2.jpg" />
     <Content Include="Content\Images\desert.JPG" />

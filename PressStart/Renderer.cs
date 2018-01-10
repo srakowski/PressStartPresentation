@@ -18,6 +18,12 @@ namespace PressStart
             IsFragment = Options.IsFragment;
             IsActive = !Options.IsFragment;
         }
-        public bool Activate() => IsActive = true;
+        public bool Activate()
+        {
+            IsActive = true;
+            if (Options.SoundEffect != null)
+                Presentation.PresentationContent.SoundEffects[Options.SoundEffect].Play();
+            return IsActive;
+        }
     }
 }

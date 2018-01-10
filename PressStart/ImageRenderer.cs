@@ -17,12 +17,20 @@ namespace PressStart
         public override void Draw(SpriteBatch sb, int yOffset)
         {
             var scale = new Vector2(Options.Scale, Options.Scale);
+            if (yOffset <= 0)
             sb.Draw(
                 texture: Image,
                 position: new Vector2(640f, 360f),
                 scale: scale,
                 origin: new Vector2(Image.Width * 0.5f, Image.Height * 0.5f),
                 color: Color.White);
+            else
+                sb.Draw(
+                    texture: Image,
+                    position: new Vector2(640f, 100f + yOffset),
+                    scale: scale,
+                    origin: new Vector2(Image.Width * 0.5f, 0f),
+                    color: Color.White);
         }
     }
 }

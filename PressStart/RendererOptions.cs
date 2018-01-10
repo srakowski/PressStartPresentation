@@ -5,6 +5,7 @@
         public bool IsFragment { get; set; } = false;
         public float Scale { get; set; } = 1f;
         public float Alpha { get; set; } = 1f;
+        public string SoundEffect { get; set; } = null;
     }
 
     static class RendererOptionsExtensions
